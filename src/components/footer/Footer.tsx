@@ -6,8 +6,6 @@ function Footer(){
 
         <footer className="bg-[#fed12f]">
 
-            <img src="" alt="" />
-
             <div className="grid grid-cols-12 p-14 pb-10 justify-center">
 
                 <div className="col-span-4">
@@ -42,10 +40,10 @@ function Footer(){
                             <Link to={'/home'}>Principal</Link>
                         </li>
                         <li className="mb-1 hover:text-white">
-                            <Link to={'/'}>Contato</Link>
+                            <Link to={'/cadastrar'}>Cadastrar Categoria</Link>
                         </li>
                         <li className="mb-1 hover:text-white">
-                            <Link to={'/'}>Sobre</Link>
+                            <Link to={'/categorias'}>Categorias</Link>
                         </li>
                     </ul>
                 </div>
