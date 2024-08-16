@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Dna } from 'react-loader-spinner';
 import { listar } from '../../../services/Service';
-import CardTemas from '../cardCategoria/CardCategoria';
+import CardCategoria from '../cardCategoria/CardCategoria';
 import Categoria from '../../../models/Categoria';
-
+import { toastAlerta } from '../../../util/ToastAlerta'
 
 
 function ListarCategorias() {
@@ -13,7 +13,7 @@ function ListarCategorias() {
     try {
       await listar('/categorias', setCategorias);
     } catch (error) {
-      alert("Mensagem: " + error)
+      toastAlerta('Erro ao buscar a categoria:', 'erro')
     }
   }
 
@@ -38,7 +38,7 @@ function ListarCategorias() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoria.map((categoria) => (
               <>
-                <CardTemas key={categoria.id} categoria={categoria} />
+                <CardCategoria key={categoria.id} categoria={categoria} />
               </>
             ))}
           </div>
